@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How To Create A Professional Electronics Store Website In One Day</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#070B14;color:#F0F6FF;font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden;}
+
+/* HERO */
+.cp-hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,212,255,.09) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(124,58,237,.07) 0%,transparent 60%),#070B14;position:relative;}
+.cp-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(99,179,237,.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+.cp-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.22);border-radius:50px;padding:6px 18px;font-size:13px;color:#00D4FF;font-weight:600;letter-spacing:.5px;margin-bottom:28px;position:relative;}
+.cp-hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,6vw,3.8rem);font-weight:800;line-height:1.12;max-width:820px;margin:0 auto 24px;background:linear-gradient(135deg,#fff 30%,#00D4FF 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.cp-lead{font-size:1.1rem;color:#8BA3C1;max-width:580px;margin:0 auto 36px;}
+.cp-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.cp-btn-primary{background:linear-gradient(135deg,#00D4FF,#3B82F6);color:#000;font-weight:700;padding:14px 32px;border-radius:10px;text-decoration:none;font-size:15px;box-shadow:0 4px 20px rgba(0,212,255,.3);transition:transform .2s,box-shadow .2s;display:inline-block;}
+.cp-btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,255,.5);}
+.cp-btn-ghost{background:transparent;color:#F0F6FF;border:1px solid rgba(99,179,237,.2);padding:14px 28px;border-radius:10px;text-decoration:none;font-size:15px;transition:border-color .2s,color .2s;display:inline-block;}
+.cp-btn-ghost:hover{border-color:#00D4FF;color:#00D4FF;}
+
+/* STATS */
+.cp-stats{display:flex;justify-content:center;flex-wrap:wrap;background:#0D1424;border-top:1px solid rgba(99,179,237,.12);border-bottom:1px solid rgba(99,179,237,.12);padding:32px 20px;}
+.cp-stat{flex:1;min-width:130px;text-align:center;padding:8px 20px;border-right:1px solid rgba(99,179,237,.12);}
+.cp-stat:last-child{border-right:none;}
+.cp-stat-num{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:#00D4FF;display:block;}
+.cp-stat-label{font-size:13px;color:#8BA3C1;}
+
+/* DIVIDER */
+.cp-divider{border:none;border-top:1px solid rgba(99,179,237,.1);margin:0;}
+
+/* SECTION */
+.cp-section{padding:70px 24px;max-width:860px;margin:0 auto;}
+.cp-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#00D4FF;margin-bottom:12px;}
+.cp-section h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;margin-bottom:16px;line-height:1.2;color:#F0F6FF;}
+.cp-section p{color:#8BA3C1;margin-bottom:14px;}
+.cp-section p strong{color:#F0F6FF;}
+
+/* CHECKLIST */
+.cp-checklist{list-style:none;padding:0;margin:24px 0;display:grid;gap:12px;}
+.cp-checklist li{display:flex;align-items:flex-start;gap:14px;background:#111827;border:1px solid rgba(99,179,237,.12);border-radius:10px;padding:14px 18px;color:#F0F6FF;font-size:15px;transition:border-color .2s;}
+.cp-checklist li:hover{border-color:rgba(0,212,255,.3);}
+.cp-check-icon{width:22px;height:22px;background:rgba(0,212,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#00D4FF;font-size:11px;margin-top:2px;}
+
+/* HIGHLIGHT */
+.cp-highlight{background:linear-gradient(135deg,rgba(0,212,255,.06),rgba(59,130,246,.04));border:1px solid rgba(0,212,255,.22);border-radius:16px;padding:28px 32px;margin:28px 0;}
+.cp-highlight p{color:#F0F6FF;font-size:1.05rem;margin:0;}
+
+/* FEATURES */
+.cp-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:28px 0;}
+.cp-feature{background:#111827;border:1px solid rgba(99,179,237,.12);border-radius:14px;padding:22px;transition:transform .2s,border-color .2s;}
+.cp-feature:hover{transform:translateY(-4px);border-color:rgba(0,212,255,.3);}
+.cp-ficon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:17px;}
+.cp-fblue{background:rgba(59,130,246,.15);color:#60A5FA;}
+.cp-fcyan{background:rgba(0,212,255,.1);color:#00D4FF;}
+.cp-fpurple{background:rgba(124,58,237,.15);color:#A78BFA;}
+.cp-fgreen{background:rgba(16,185,129,.15);color:#34D399;}
+.cp-feature h3{font-size:.95rem;font-weight:600;margin-bottom:8px;color:#F0F6FF;}
+.cp-feature p{font-size:13px;margin:0;color:#8BA3C1;}
+
+/* SECTIONS LIST */
+.cp-slist{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin:22px 0;}
+.cp-sitem{display:flex;align-items:center;gap:10px;background:#111827;border:1px solid rgba(99,179,237,.12);border-radius:8px;padding:11px 15px;font-size:13px;color:#F0F6FF;}
+.cp-sitem i{color:#00D4FF;font-size:9px;}
+
+/* TABLE */
+.cp-table{width:100%;border-collapse:collapse;margin:22px 0;border-radius:12px;overflow:hidden;border:1px solid rgba(99,179,237,.12);}
+.cp-table th{background:rgba(0,212,255,.08);color:#00D4FF;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:13px 18px;text-align:left;border-bottom:1px solid rgba(99,179,237,.12);}
+.cp-table td{padding:12px 18px;font-size:14px;border-bottom:1px solid rgba(99,179,237,.08);color:#F0F6FF;}
+.cp-table td:first-child{color:#8BA3C1;}
+.cp-table tr:last-child td{border-bottom:none;}
+.cp-table tr:hover td{background:rgba(255,255,255,.02);}
+
+/* WHO */
+.cp-who{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:24px 0;}
+.cp-who-card{background:#111827;border:1px solid rgba(99,179,237,.12);border-radius:12px;padding:20px;text-align:center;transition:border-color .2s;}
+.cp-who-card:hover{border-color:rgba(0,212,255,.25);}
+.cp-emoji{font-size:26px;display:block;margin-bottom:8px;}
+.cp-who-card p{font-size:13px;margin:0;color:#8BA3C1;}
+
+/* CUSTOMIZE */
+.cp-clist{display:grid;gap:9px;margin:22px 0;}
+.cp-citem{display:flex;align-items:center;gap:14px;padding:13px 17px;background:#111827;border:1px solid rgba(99,179,237,.12);border-radius:9px;font-size:15px;color:#F0F6FF;}
+.cp-dot{width:8px;height:8px;background:#00D4FF;border-radius:50%;flex-shrink:0;}
+
+/* BROWSER MOCKUP */
+.cp-demo{background:#0D1424;border:1px solid rgba(99,179,237,.15);border-radius:16px;padding:24px;margin:28px 0;text-align:center;}
+.cp-browser-bar{display:flex;align-items:center;gap:7px;margin-bottom:14px;}
+.cp-dr{width:11px;height:11px;border-radius:50%;background:#FF5F57;}
+.cp-dy{width:11px;height:11px;border-radius:50%;background:#FFBD2E;}
+.cp-dg{width:11px;height:11px;border-radius:50%;background:#28CA41;}
+.cp-url{flex:1;background:#111827;border:1px solid rgba(99,179,237,.12);border-radius:5px;padding:4px 10px;font-size:12px;color:#8BA3C1;text-align:left;}
+.cp-screen{background:linear-gradient(135deg,#0a0f1e,#0d1a2e);border-radius:10px;padding:20px;border:1px solid rgba(99,179,237,.1);margin-bottom:18px;}
+.cp-pnav{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;}
+.cp-plogo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;background:linear-gradient(135deg,#fff,#00D4FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.cp-plinks{display:flex;gap:14px;}
+.cp-plinks span{font-size:12px;color:#8BA3C1;}
+.cp-phtitle{font-family:'Space Grotesk',sans-serif;font-size:clamp(1rem,3vw,1.6rem);font-weight:700;color:#fff;margin-bottom:6px;display:block;}
+.cp-phsub{font-size:12px;color:#8BA3C1;margin-bottom:14px;display:block;}
+.cp-pbtn{display:inline-block;background:linear-gradient(135deg,#00D4FF,#3B82F6);color:#000;font-size:12px;font-weight:700;padding:7px 18px;border-radius:6px;text-decoration:none;}
+.cp-products{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:18px;}
+.cp-product{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:12px 8px;text-align:center;}
+.cp-picon{font-size:20px;margin-bottom:5px;display:block;}
+.cp-pname{font-size:10px;color:#8BA3C1;display:block;margin-bottom:3px;}
+.cp-pprice{font-size:11px;font-weight:700;color:#00D4FF;display:block;}
+
+/* CTA */
+.cp-cta-wrap{padding:80px 24px;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(0,212,255,.06),transparent 70%),#070B14;text-align:center;}
+.cp-cta-box{max-width:660px;margin:0 auto;background:#0D1424;border:1px solid rgba(0,212,255,.25);border-radius:24px;padding:52px 36px;box-shadow:0 0 80px rgba(0,212,255,.08);position:relative;}
+.cp-cta-box::before{content:'';position:absolute;top:-1px;left:25%;right:25%;height:2px;background:linear-gradient(90deg,transparent,#00D4FF,transparent);}
+.cp-cta-box h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,4vw,2.1rem);font-weight:700;color:#F0F6FF;margin-bottom:4px;}
+.cp-price{display:inline-flex;align-items:baseline;gap:4px;margin:18px 0 24px;}
+.cp-price-curr{font-size:1.3rem;font-weight:700;color:#00D4FF;}
+.cp-price-num{font-family:'Space Grotesk',sans-serif;font-size:3rem;font-weight:700;color:#00D4FF;}
+.cp-price-note{font-size:12px;color:#8BA3C1;margin-left:6px;}
+.cp-chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-bottom:28px;}
+.cp-chip{display:flex;align-items:center;gap:6px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.16);border-radius:50px;padding:5px 13px;font-size:13px;color:#F0F6FF;}
+.cp-chip i{color:#00D4FF;font-size:10px;}
+.cp-btn-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#00D4FF,#3B82F6);color:#000;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:17px;padding:17px 44px;border-radius:12px;text-decoration:none;box-shadow:0 6px 30px rgba(0,212,255,.35);transition:transform .2s,box-shadow .2s;max-width:400px;width:100%;justify-content:center;}
+.cp-btn-cta:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(0,212,255,.5);}
+.cp-cta-note{font-size:13px;color:#8BA3C1;margin-top:14px;}
+
+/* FOOTER */
+.cp-footer{padding:28px 20px;text-align:center;border-top:1px solid rgba(99,179,237,.1);color:#8BA3C1;font-size:13px;}
+.cp-footer a{color:#00D4FF;text-decoration:none;}
+
+/* ANIMATION */
+.cp-fade{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+.cp-fade.cp-visible{opacity:1;transform:translateY(0);}
+
+/* MOBILE */
+@media(max-width:600px){
+  .cp-btns{flex-direction:column;align-items:center;}
+  .cp-btn-primary,.cp-btn-ghost{width:260px;text-align:center;}
+  .cp-stat{border-right:none;border-bottom:1px solid rgba(99,179,237,.1);}
+  .cp-stat:last-child{border-bottom:none;}
+  .cp-cta-box{padding:32px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="cp-hero">
+  <div class="cp-badge"><i class="fas fa-bolt"></i> Step-by-step guide — 2026 edition</div>
+  <h1>How To Create A Professional Electronics Store Website In One Day</h1>
+  <p class="cp-lead">Stop wasting months and $500+ on custom builds. Here's the smarter way to launch a stunning online store — fast.</p>
+  <div class="cp-btns">
+    <a href="https://digitalproductdp.gumroad.com/l/npdnch" class="cp-btn-primary">🔥 Get The Template — $19</a>
+    <a href="https://jamil478.github.io/Crescendo-Premium-Audio-Experience/" target="_blank" class="cp-btn-ghost"><i class="fas fa-play"></i> Live Demo</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="cp-stats">
+  <div class="cp-stat"><span class="cp-stat-num">$500+</span><span class="cp-stat-label">Custom build cost</span></div>
+  <div class="cp-stat"><span class="cp-stat-num">1 Day</span><span class="cp-stat-label">Launch with template</span></div>
+  <div class="cp-stat"><span class="cp-stat-num">12</span><span class="cp-stat-label">Full sections included</span></div>
+  <div class="cp-stat"><span class="cp-stat-num">$19</span><span class="cp-stat-label">One-time price</span></div>
+</div>
+
+<hr class="cp-divider">
+
+<!-- SECTION 1 -->
+<div class="cp-section cp-fade">
+  <span class="cp-tag">The Problem</span>
+  <h2>What Does a Professional Online Store Actually Need?</h2>
+  <p>Before spending a single dollar, let's understand what separates a store that converts from one that doesn't. Building from scratch means hiring developers, waiting weeks, and paying thousands.</p>
+  <p>Most business owners think they need a developer. <strong>The truth? You just need the right template.</strong></p>
+  <ul class="cp-checklist">
+    <li><div class="cp-check-icon"><i class="fas fa-check"></i></div>A clean, modern design that instantly builds trust</li>
+    <li><div class="cp-check-icon"><i class="fas fa-check"></i></div>Mobile responsive layout — 60%+ of shoppers use phones</li>
+    <li><div class="cp-check-icon"><i class="fas fa-check"></i></div>Product showcase with smooth, premium animations</li>
+    <li><div class="cp-check-icon"><i class="fas fa-check"></i></div>Easy navigation and fast-loading pages</li>
+    <li><div class="cp-check-icon"><i class="fas fa-check"></i></div>Cart, wishlist, and checkout-ready UI</li>
+    <li><div class="cp-check-icon"><i class="fas fa-check"></i></div>Professional fonts and a bold color palette</li>
+  </ul>
+</div>
+
+<hr class="cp-divider">
+
+<!-- SECTION 2 -->
+<div class="cp-section cp-fade">
+  <span class="cp-tag">The Solution</span>
+  <h2>The Smarter Way: Use a Premium HTML Template</h2>
+  <p>Instead of spending months and thousands of dollars, smart entrepreneurs use ready-made premium templates — and customize them in hours. No backend, no monthly fees.</p>
+  <div class="cp-highlight">
+    <p>💡 <strong>That's exactly what Crescendo offers.</strong> A single HTML file that looks like it cost $2,000 to build — ready to launch the same day you download it.</p>
+  </div>
+</div>
+
+<hr class="cp-divider">
+
+<!-- SECTION 3 -->
+<div class="cp-section cp-fade">
+  <span class="cp-tag">Introducing</span>
+  <h2>Crescendo — Premium Audio &amp; Electronics Store Template</h2>
+  <p>A <strong>single-file HTML e-commerce template</strong> built specifically for audio and electronics brands. No coding experience needed. No monthly fees. No plugins.</p>
+  <p>Just open the file, customize your brand name and products, and your store is live.</p>
+  <div class="cp-demo">
+    <div class="cp-browser-bar">
+      <div class="cp-dr"></div><div class="cp-dy"></div><div class="cp-dg"></div>
+      <div class="cp-url">🔒 crescendo-store.com</div>
+    </div>
+    <div class="cp-screen">
+      <div class="cp-pnav">
+        <div class="cp-plogo">🎧 Crescendo</div>
+        <div class="cp-plinks"><span>Products</span><span>About</span><span>🛒 0</span></div>
+      </div>
+      <span class="cp-phtitle">Elevate Your Audio Journey</span>
+      <span class="cp-phsub">Premium electronics, delivered to your door</span>
+      <a href="https://jamil478.github.io/Crescendo-Premium-Audio-Experience/" target="_blank" class="cp-pbtn">Shop Now →</a>
+      <div class="cp-products">
+        <div class="cp-product"><span class="cp-picon">🎧</span><span class="cp-pname">Pro Headphones</span><span class="cp-pprice">$299</span></div>
+        <div class="cp-product"><span class="cp-picon">🎵</span><span class="cp-pname">Earbuds X168</span><span class="cp-pprice">$149</span></div>
+        <div class="cp-product"><span class="cp-picon">🔊</span><span class="cp-pname">Speaker Pro</span><span class="cp-pprice">$189</span></div>
+      </div>
+    </div>
+    <a href="https://jamil478.github.io/Crescendo-Premium-Audio-Experience/" target="_blank" class="cp-btn-primary"><i class="fas fa-external-link-alt"></i> Open Live Demo</a>
+  </div>
+</div>
+
+<hr class="cp-divider">
+
+<!-- SECTION 4 -->
+<div class="cp-section cp-fade">
+  <span class="cp-tag">Design</span>
+  <h2>🎨 What Makes It Stand Out?</h2>
+  <div class="cp-features">
+    <div class="cp-feature"><div class="cp-ficon cp-fcyan"><i class="fas fa-palette"></i></div><h3>Bold Color Palette</h3><p>Electric blue + cyan — modern, bold, and conversion-focused.</p></div>
+    <div class="cp-feature"><div class="cp-ficon cp-fblue"><i class="fas fa-layer-group"></i></div><h3>Glassmorphism Design</h3><p>Cards with blur effects, soft shadows, and depth that looks premium.</p></div>
+    <div class="cp-feature"><div class="cp-ficon cp-fpurple"><i class="fas fa-film"></i></div><h3>Smooth 60fps Animations</h3><p>Every interaction feels fast and polished — never slow or cheap.</p></div>
+    <div class="cp-feature"><div class="cp-ficon cp-fgreen"><i class="fas fa-mobile-alt"></i></div><h3>Fully Responsive</h3><p>Looks perfect on mobile, tablet, and desktop — zero effort.</p></div>
+  </div>
+</div>
+
+<hr class="cp-divider">
+
+<!-- SECTION 5 -->
+<div class="cp-section cp-fade">
+  <span class="cp-tag">What's Inside</span>
+  <h2>12 Full Sections Included</h2>
+  <p>Everything a professional electronics store needs — pre-built and ready to customize.</p>
+  <div class="cp-slist">
+    <div class="cp-sitem"><i class="fas fa-circle"></i> Sticky Navbar + Cart Badge</div>
+    <div class="cp-sitem"><i class="fas fa-circle"></i> Hero — Typewriter Headline</div>
+    <div class="cp-sitem"><i class="fas fa-circle"></i> Brands Marquee Bar</div>
+    <div class="cp-sitem"><i class="fas fa-circle"></i> Featured Products (3D Tilt)</div>
+    <div class="cp-sitem"><i class="fas fa-circle"></i> Shop By Category</div>
+    <div class="cp-sitem"><i class="fas fa-circle"></i> Sale Banner + Countdown</div>
+    <div class="cp-sitem"><i class="fas fa-circle"></i> Best Sellers (Gold Badges)</div>
+    <div class="cp-sitem"><i class="fas fa-circle"></i> Why Choose Us</div>
+    <div class="cp-sitem"><i class="fas fa-circle"></i> Testimonials Carousel</div>
+    <div class="cp-sitem"><i class="fas fa-circle"></i> New Arrivals</div>
+    <div class="cp-sitem"><i class="fas fa-circle"></i> Newsletter Section</div>
+    <div class="cp-sitem"><i class="fas fa-circle"></i> 4-Column Footer</div>
+  </div>
+</div>
+
+<hr class="cp-divider">
+
+<!-- SECTION 6 -->
+<div class="cp-section cp-fade">
+  <span class="cp-tag">Technical</span>
+  <h2>🛠️ Technical Details</h2>
+  <table class="cp-table">
+    <thead><tr><th>Feature</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td>File Type</td><td>Single HTML file</td></tr>
+      <tr><td>CSS</td><td>Embedded — no external stylesheet needed</td></tr>
+      <tr><td>JavaScript</td><td>Vanilla JS — no jQuery required</td></tr>
+      <tr><td>Fonts</td><td>Google Fonts (CDN)</td></tr>
+      <tr><td>Icons</td><td>Font Awesome 6 (CDN)</td></tr>
+      <tr><td>Browser Support</td><td>Chrome, Firefox, Safari, Edge</td></tr>
+      <tr><td>Responsive</td><td>Yes — Mobile, Tablet, Desktop</td></tr>
+      <tr><td>Images Required</td><td>No — CSS placeholders included</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="cp-divider">
+
+<!-- SECTION 7 -->
+<div class="cp-section cp-fade">
+  <span class="cp-tag">Perfect For</span>
+  <h2>Who Is This Template For?</h2>
+  <div class="cp-who">
+    <div class="cp-who-card"><span class="cp-emoji">🎧</span><p>Audio &amp; electronics brands launching an online store</p></div>
+    <div class="cp-who-card"><span class="cp-emoji">💼</span><p>Freelance developers needing a client-ready starter</p></div>
+    <div class="cp-who-card"><span class="cp-emoji">🎓</span><p>Students learning e-commerce UI/UX design</p></div>
+    <div class="cp-who-card"><span class="cp-emoji">📦</span><p>Dropshippers wanting a premium storefront fast</p></div>
+    <div class="cp-who-card"><span class="cp-emoji">🎨</span><p>Designers building a strong portfolio piece</p></div>
+  </div>
+</div>
+
+<hr class="cp-divider">
+
+<!-- SECTION 8 -->
+<div class="cp-section cp-fade">
+  <span class="cp-tag">Easy Setup</span>
+  <h2>🔧 Easy To Customize</h2>
+  <p>Just open in <strong>VS Code</strong> or <strong>Notepad++</strong> and change these — no coding experience required.</p>
+  <div class="cp-clist">
+    <div class="cp-citem"><span class="cp-dot"></span>Brand name &amp; logo</div>
+    <div class="cp-citem"><span class="cp-dot"></span>Colors (CSS variables at the top)</div>
+    <div class="cp-citem"><span class="cp-dot"></span>Product names &amp; prices</div>
+    <div class="cp-citem"><span class="cp-dot"></span>Your own images</div>
+    <div class="cp-citem"><span class="cp-dot"></span>Contact &amp; social links</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cp-cta-wrap cp-fade">
+  <div class="cp-cta-box">
+    <div class="cp-badge" style="display:inline-flex;margin-bottom:16px;"><i class="fas fa-fire"></i> Limited Launch Price</div>
+    <h2>🔥 Download Crescendo<br>Premium Template</h2>
+    <div class="cp-price">
+      <span class="cp-price-curr">$</span>
+      <span class="cp-price-num">19</span>
+      <span class="cp-price-note">one-time · instant download</span>
+    </div>
+    <div class="cp-chips">
+      <div class="cp-chip"><i class="fas fa-check"></i> Single HTML File</div>
+      <div class="cp-chip"><i class="fas fa-check"></i> Mobile Responsive</div>
+      <div class="cp-chip"><i class="fas fa-check"></i> Modern Animations</div>
+      <div class="cp-chip"><i class="fas fa-check"></i> Easy Customization</div>
+      <div class="cp-chip"><i class="fas fa-check"></i> README Guide Included</div>
+    </div>
+    <a href="https://digitalproductdp.gumroad.com/l/npdnch" class="cp-btn-cta"><i class="fas fa-download"></i> Download Now — $19</a>
+    <p class="cp-cta-note">⚡ Instant download · No subscription · Yours forever</p>
+    <p class="cp-cta-note">Don't waste months building from scratch. Launch your store today.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="cp-footer">© 2026 Digital Product DP · <a href="https://digitalproductdp.gumroad.com">digitalproductdp.gumroad.com</a></div>
+
+<script>
+(function(){
+  var obs=new IntersectionObserver(function(e){
+    e.forEach(function(i){if(i.isIntersecting)i.target.classList.add('cp-visible');});
+  },{threshold:0.1});
+  document.querySelectorAll('.cp-fade').forEach(function(el){obs.observe(el);});
+})();
+</script>
+</body>
+</html>
